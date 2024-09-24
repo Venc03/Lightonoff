@@ -11,14 +11,21 @@ export default class Mezo{
         this.mkiir(this.#light, this.#index, this.#szulElem);
 
         this.gombElem = $(`.mezo${this.#index}`);
-        if(this.#light == false || this.#light == true){
-            this.gombFelkapcs();
-        }
+        this.colorChanger();
+        this.gombFelkapcs();
     }
 
     mkiir(light, index, szulElem){
-        let txt = `<div id = "mezo" class = "mezo${index}"> ${light} </div>`
+        let txt = `<div id = "mezo" class = "mezo${index}"> </div>`
         szulElem.append(txt);
+    }
+
+    colorChanger(){
+            if(this.#light == true){
+                this.gombElem.css("background-color", "green");
+            }else{
+                this.gombElem.css("background-color", "orange");
+            }
     }
 
     gombFelkapcs(){

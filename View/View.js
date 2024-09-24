@@ -7,12 +7,13 @@ export default class View{
     constructor(list, szulElem){
         this.#list = list;
         this.#szulElem = szulElem;
-        this.pkiir();
+        this.#szulElem.empty();
+        this.pkiir(this.#szulElem);
     }
 
-    pkiir(){
+    pkiir(szulElem){
         this.#list.forEach((elem, index) => {
-            new Mezo(elem, index, this.#szulElem);
+            new Mezo(elem, index, szulElem);
         });
     }
 }
